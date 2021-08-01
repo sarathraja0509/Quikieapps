@@ -4,7 +4,7 @@ import { Table, Tag, Space,Input } from "antd";
 import { PageHeader } from 'antd';
 import "antd/dist/antd.css";
 
-const SampleTable = ({ list}) => {
+const SampleTable = ({ list,searchFunction}) => {
   const tableData = {
     bordered: false,
     loading: false,
@@ -14,6 +14,9 @@ const SampleTable = ({ list}) => {
     top: "none",
   };
   const { Search } = Input
+  const searchFun=(e)=>{
+    searchFunction(e.target.value)
+  }
   const columns = [
     {
       title: "Name",
@@ -53,6 +56,7 @@ const SampleTable = ({ list}) => {
  
   
       <div style={{ marginTop: "1em" }}>
+      {/* <Search placeholder="input search text" onChange={()=>searchFun()} style={{ width: 200 }} /> */}
         <Table
           {...tableData}
           columns={columns}

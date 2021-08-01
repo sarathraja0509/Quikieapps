@@ -28,9 +28,9 @@ function Tracker() {
         
         <Cards ></Cards>
         <div style={{paddingTop:'1em',paddingLeft:'5em'}}>
-        <Search placeholder="input search text" onChange={handlechange} style={{ width: 200 }} />
+        <Search placeholder=" search" onChange={handlechange} style={{ width: 200 }} />
         </div>
-          <SampleTable list={filteredcoins}></SampleTable>
+          <SampleTable list={filteredcoins} searchFunction={handlechange}></SampleTable>
       </div>
   )
 }
